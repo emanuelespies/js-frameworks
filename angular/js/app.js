@@ -1,4 +1,4 @@
-var ngCarol = angular.module('ngCarol', [])
+var ngCarol = angular.module('ngCarol', ['CarolDirectives', 'CarolFilters'])
 	.config(function() {
 
 	});

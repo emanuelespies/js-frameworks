@@ -50,6 +50,7 @@
 						<i class="glyphicon glyphicon-list-alt"></i>
 					</span>
 					<input ng-model="newQuote" placeholder="New Quote" class="form-control" type="text"><!-- model  -->
+					<!-- {{ newQuote | altCaps }} -->
 					<span class="input-group-btn">
 						<button ng-click="addNewQuote()" class="btn btn-success" type="button"><!-- click  -->
 							<i class="glyphicon glyphicon-plus"></i>
@@ -57,11 +58,11 @@
 					</span>
 				</div>
 
-				<div ng-repeat="quote in quotes" class="input-group input-group-lg"><!-- repeat  -->
+				<div ng-repeat="quote in quotes | orderBy: 'completed'" class="input-group input-group-lg"><!-- repeat  -->
 					<span class="input-group-addon">
 						<input ng-model="quote.completed" type="checkbox"> <!-- model -->
 					</span>
-					<input ng-model="quote.val" ng-class="{ finished: quote.completed }" class="form-control" type="text"><!-- model / class  -->
+					<input ng-model="quote.val" complete-color="quote.completed"  ng-class="{ finished: quote.completed }" class="form-control" type="text"><!-- model / class  -->
 					<span class="input-group-btn">
 						<button ng-show="quote.completed" ng-click="removeQuote($index)" class="btn btn-danger" type="button"><!-- click  -->
 							<i class="glyphicon glyphicon-remove"></i>
