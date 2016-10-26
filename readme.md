@@ -10,6 +10,7 @@
 ### My version
 I am using Carol 2015, Todd Haynes, quotes. Because it is gayer and more cute. And definitely a more pleasurable way to learn.
 
+> This tutorial uses an old Ember verion. Attention to that. 
 
 ----
 
