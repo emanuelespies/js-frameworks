@@ -37,7 +37,9 @@
 		<div class="navbar navbar-inverse" role="navigation">
 			<div class="container">
 				<a class="navbar-brand" href="#">Ember Carol's Quotes</a>
-				<a class="navbar-right navbar-img" href="#">Ember</a>
+				<a class="navbar-right navbar-img" href="#">
+					<img src="https://emberjs.com/images/brand/ember_Ember-Light-e42a2b30.png">
+				</a>
 			</div>
 		</div>
 
@@ -50,21 +52,21 @@
 					<span class="input-group-addon">
 					  <i class="glyphicon glyphicon-list-alt"></i>
 					</span>
-					<input class="form-control" type="text" id="new-quote" placeholder="New Quote"> <!-- input value action -->
+					{{input value=newQuote class="form-control" type="text" id="new-quote" placeholder="New Quote"}}<!-- input value action -->
 					<span class="input-group-btn">
-					  <button class="btn btn-success" type="button"> <!-- action createNewTodo -->
+					  <button {{action "createNewQuote"}} class="btn btn-success" type="button"> <!-- action createNewTodo -->
 						<i class="glyphicon glyphicon-plus"></i>
 					  </button>
 					</span>
 				  </div>
 				  <!-- each -->
 				  {{#each itemController="carol"}}
-				  	{{carol-entry val=val completed=completed}}
+				  	{{carol-entry val=val completed=completed remove="removeQuote"}}
 				  {{/each}}
 				  <!-- /each -->
 
 				  <div class="btn-clear-group">
-					<button class="btn btn-primary btn-clear">Clear Completed</button> <!-- action -->
+					<button {{action "clearCompleted"}}class="btn btn-primary btn-clear">Clear Completed</button> <!-- action -->
 				  </div>
 				</div>
 			</section>
@@ -79,7 +81,7 @@
 
 				{{input classNameBindings=":form-control completed:finished" value=val}} <!-- value  -->
 				<span class="input-group-btn">
-				  <button class="btn btn-danger" type="button"> <!-- action -->
+				  <button class="btn btn-danger" type="button" {{action "click"}}> <!-- action -->
 					<i class="glyphicon glyphicon-remove"></i>
 				  </button>
 				</span>
