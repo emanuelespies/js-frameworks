@@ -37,40 +37,30 @@
 
 		<div class="navbar navbar-inverse" role="navigation">
 			<div class="container">
-				<a class="navbar-brand" href="#">Angular To Do</a>
-				<a class="navbar-right navbar-img" href="#">AngularJS</a>
+				<a class="navbar-brand" href="#">Backbone Carol</a>
+				<a class="navbar-right navbar-img" href="#">Backbone</a>
 			</div>
 		</div>
 
-		<section><!-- ctrl -->
+		<section>
 			<div class="outer-container">
 
-				<div class="add-todo-group input-group input-group-lg">
-					<span class="input-group-addon">
-						<i class="glyphicon glyphicon-list-alt"></i>
-					</span>
-					<input placeholder="New Todo" class="form-control" type="text"><!-- model  -->
-					<span class="input-group-btn">
-						<button class="btn btn-success" type="button"><!-- click  -->
-							<i class="glyphicon glyphicon-plus"></i>
-						</button>
-					</span>
+			<div class="add-todo-group input-group input-group-lg">
+				<span class="input-group-addon">
+					<i class="glyphicon glyphicon-list-alt"></i>
+				</span>
+				<input id="newTodo" placeholder="New Todo" class="form-control" type="text">
+				<span class="input-group-btn">
+					<button class="btn btn-success" type="button">
+					<i class="glyphicon glyphicon-plus"></i>
+					</button>
+				</span>
 				</div>
 
-				<div class="input-group input-group-lg"><!-- repeat  -->
-					<span class="input-group-addon">
-						<input type="checkbox"> <!-- model -->
-					</span>
-					<input class="form-control" type="text"><!-- model / class  -->
-					<span class="input-group-btn">
-						<button class="btn btn-danger" type="button"><!-- click  -->
-							<i class="glyphicon glyphicon-remove"></i>
-						</button>
-					</span>
-				</div>
+				<div id="app"><!-- Todo list goes here --></div>
 
 				<div class="btn-clear-group">
-					<button class="btn btn-primary btn-clear">Clear Completed</button><!-- click -->
+					<button class="btn btn-primary btn-clear">Clear Completed</button>
 				</div>
 			</div>
 		</section>
@@ -82,11 +72,13 @@
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/underscore.js"></script>
+		<script src="js/backbone.js"></script>
+		<script src="js/models.js"></script>
+		<script src="js/views.js"></script>
+		<script src="js/router.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/filters.js"></script>
-		<script src="js/directives.js"></script>
-		<script src="js/ngTodoCtrl.js"></script>
 	</body>
 </html>
 
