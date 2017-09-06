@@ -1,12 +1,21 @@
 window.QuoteView = Backbone.View.extend({
+	initialize: function(){
+		this.model.on('change', this.render, this);
+	},
 	template: _.template('<span class="input-group-addon"><input <%= completed ? "checked=checked" : "" %> type="checkbox"></span><input value="<%= val %>" class="form-control<%= completed ? " finished" : "" %>" type="text"><span class="input-group-btn"><button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i></button></span>'),
 	events: {
 		'change input[type=checkbox]' : 'toggle',
 		'change .form-control' : 'update',
 		'click .btn-danger' : 'remove'
 	},
-	initialize: function(){
-		this.model.on('change', this.render, this);
+	update: function() {
+		this.model.update(this.$('.form-control').val());
+	},
+	remove: function() {
+		this.model.destroy();
+	},
+	toggle: function() {
+		this.model.toggle();
 	},
 	render: function() {
 		this.$el.html(this.template(this.model.toJSON()));
@@ -33,5 +42,9 @@ window.QuotesView = Backbone.View.extend({
 	render: function() {
 		this.addAll();
 		return this;
+	},
+	filterCompleted: function() {
+		this.collection.filterCompleted();
+		this.render();
 	}
 });

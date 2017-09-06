@@ -4,6 +4,15 @@ window.CarolApp = new (Backbone.Router.extend({
 		this.quoteItems = new QuoteItems();
 		this.quotesView = new QuotesView({collection: this.quoteItems});
 		this.quotesView.render();
+
+		$('.btn-clear').click(function(e) {
+			window.CarolApp.quotesView.filterCompleted();
+		});
+
+		$('.btn-success').click(function(){
+			window.CarolApp.quoteItems.add({val:$("#newQuote").val(), completed: false});
+			$("#newQuote").val('');
+		});
 	},
 	index: function() {
 		var fixtures = [
